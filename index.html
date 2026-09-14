@@ -79,7 +79,7 @@
     max-width:none;
     text-align:center;
     border-bottom: 2px solid var(--cyan-dim);
-    margin: 0 calc(-1 * clamp(1.2rem, 4vw, 2.2rem)) 1.3rem;
+    margin: 0 calc(-1 * clamp(1.2rem, 4vw, 2.2rem));
     padding-bottom: 0.9rem;
   }
   .titlebar-inner{
@@ -169,16 +169,31 @@
     padding-left: 0.8em;
   }
 
-  /* Statusbar becomes a full-bleed band, alternating to the dark blue —
-     same edge-to-edge trick as .titlebar (cancels .screen's side padding,
-     re-centers its content at --maxw via .statusbar-inner). */
+  /* Content band: full-bleed dark blue behind the body text — same
+     edge-to-edge trick as .titlebar (cancels .screen's side padding,
+     re-centers its content at --maxw via .content-band-inner). */
+  .content-band{
+    width:auto;
+    max-width:none;
+    margin: 0 calc(-1 * clamp(1.2rem, 4vw, 2.2rem));
+    padding: 0;
+    background: var(--dos-blue-dark);
+  }
+  .content-band-inner{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 1.3rem clamp(1.2rem, 4vw, 2.2rem) 0.3rem;
+  }
+
+  /* Statusbar goes back to the light blue, alternating against the dark
+     content band above it — same edge-to-edge trick as .titlebar. */
   .statusbar{
     width:auto;
     max-width:none;
-    margin: 1.3rem calc(-1 * clamp(1.2rem, 4vw, 2.2rem)) calc(-1 * clamp(1.4rem, 4vw, 2rem));
+    margin: 0 calc(-1 * clamp(1.2rem, 4vw, 2.2rem)) calc(-1 * clamp(1.4rem, 4vw, 2rem));
     padding: 0.9rem 0 clamp(1.4rem, 4vw, 2rem);
     border-top: 2px solid var(--cyan-dim);
-    background: var(--dos-blue-dark);
+    background: var(--dos-blue);
   }
   .statusbar-inner{
     max-width: var(--maxw);
@@ -299,13 +314,17 @@
       </div>
     </div>
 
-    <p class="body-text" data-sl="Pri načrtovanju rešitev ni več v ospredju, kako je nekaj tehnično izvedeno, temveč kaj podjetje dejansko potrebuje - za tehnično izvedbo poskrbijo AI orodja." data-en="When designing solutions, what matters is no longer how something is technically built, but what the business actually needs - the technical execution is handled by AI tools.">Pri načrtovanju rešitev ni več v ospredju, kako je nekaj tehnično izvedeno, temveč kaj podjetje dejansko potrebuje - za tehnično izvedbo poskrbijo AI orodja.</p>
+    <div class="content-band">
+      <div class="content-band-inner">
+        <p class="body-text" data-sl="Pri načrtovanju rešitev ni več v ospredju, kako je nekaj tehnično izvedeno, temveč kaj podjetje dejansko potrebuje - za tehnično izvedbo poskrbijo AI orodja." data-en="When designing solutions, what matters is no longer how something is technically built, but what the business actually needs - the technical execution is handled by AI tools.">Pri načrtovanju rešitev ni več v ospredju, kako je nekaj tehnično izvedeno, temveč kaj podjetje dejansko potrebuje - za tehnično izvedbo poskrbijo AI orodja.</p>
 
-    <p class="body-text" data-sl="Namesto ločenih rešitev za vsak del poslovanja s pomočjo AI orodij povežemo celotno infrastrukturo podjetja - sisteme, aplikacije, podatke in procese - v en sam povezan sistem, ki deluje kot celota, brez spreminjanja obstoječih aplikacij, poizvedb ali procesov, saj se vsaka nova potreba preprosto vgradi v že delujoč sistem." data-en="Instead of separate solutions for every part of the business, we use AI tools to connect a company's entire infrastructure - systems, applications, data and processes - into one connected system that works as a whole, without changing existing applications, queries or processes, since every new need is simply built into the already-working system.">Namesto ločenih rešitev za vsak del poslovanja s pomočjo AI orodij povežemo celotno infrastrukturo podjetja - sisteme, aplikacije, podatke in procese - v en sam povezan sistem, ki deluje kot celota, brez spreminjanja obstoječih aplikacij, poizvedb ali procesov, saj se vsaka nova potreba preprosto vgradi v že delujoč sistem.</p>
+        <p class="body-text" data-sl="Namesto ločenih rešitev za vsak del poslovanja s pomočjo AI orodij povežemo celotno infrastrukturo podjetja - sisteme, aplikacije, podatke in procese - v en sam povezan sistem, ki deluje kot celota, brez spreminjanja obstoječih aplikacij, poizvedb ali procesov, saj se vsaka nova potreba preprosto vgradi v že delujoč sistem." data-en="Instead of separate solutions for every part of the business, we use AI tools to connect a company's entire infrastructure - systems, applications, data and processes - into one connected system that works as a whole, without changing existing applications, queries or processes, since every new need is simply built into the already-working system.">Namesto ločenih rešitev za vsak del poslovanja s pomočjo AI orodij povežemo celotno infrastrukturo podjetja - sisteme, aplikacije, podatke in procese - v en sam povezan sistem, ki deluje kot celota, brez spreminjanja obstoječih aplikacij, poizvedb ali procesov, saj se vsaka nova potreba preprosto vgradi v že delujoč sistem.</p>
 
-    <p class="body-text highlight" data-sl="Prednost našega pristopa pred klasičnimi, ločenimi rešitvami je, da s pomočjo AI orodij celotno infrastrukturo podjetja povežemo v en sam integriran sistem namesto zbirke nepovezanih aplikacij in orodij. Tak pristop omogoča optimizacijo administracije ter dostop do podatkov kadarkoli in kjerkoli." data-en="The advantage of our approach over classic, siloed solutions is that we use AI tools to connect a company's entire infrastructure into one integrated system instead of a collection of disconnected applications and tools. This enables optimized administration and access to data anytime, anywhere.">Prednost našega pristopa pred klasičnimi, ločenimi rešitvami je, da s pomočjo AI orodij celotno infrastrukturo podjetja povežemo v en sam integriran sistem namesto zbirke nepovezanih aplikacij in orodij. Tak pristop omogoča optimizacijo administracije ter dostop do podatkov kadarkoli in kjerkoli.</p>
+        <p class="body-text highlight" data-sl="Prednost našega pristopa pred klasičnimi, ločenimi rešitvami je, da s pomočjo AI orodij celotno infrastrukturo podjetja povežemo v en sam integriran sistem namesto zbirke nepovezanih aplikacij in orodij. Tak pristop omogoča optimizacijo administracije ter dostop do podatkov kadarkoli in kjerkoli." data-en="The advantage of our approach over classic, siloed solutions is that we use AI tools to connect a company's entire infrastructure into one integrated system instead of a collection of disconnected applications and tools. This enables optimized administration and access to data anytime, anywhere.">Prednost našega pristopa pred klasičnimi, ločenimi rešitvami je, da s pomočjo AI orodij celotno infrastrukturo podjetja povežemo v en sam integriran sistem namesto zbirke nepovezanih aplikacij in orodij. Tak pristop omogoča optimizacijo administracije ter dostop do podatkov kadarkoli in kjerkoli.</p>
 
-    <p class="body-text" data-sl="Vse poizvedbe in integracije so narejene s pomočjo Claude, AI asistenta podjetja Anthropic." data-en="All queries and integrations are built with the help of Claude, Anthropic's AI assistant.">Vse poizvedbe in integracije so narejene s pomočjo Claude, AI asistenta podjetja Anthropic.</p>
+        <p class="body-text" data-sl="Vse poizvedbe in integracije so narejene s pomočjo Claude, AI asistenta podjetja Anthropic." data-en="All queries and integrations are built with the help of Claude, Anthropic's AI assistant.">Vse poizvedbe in integracije so narejene s pomočjo Claude, AI asistenta podjetja Anthropic.</p>
+      </div>
+    </div>
 
     <div class="statusbar">
       <div class="statusbar-inner">
